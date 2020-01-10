@@ -1,26 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Admin, Resource } from 'react-admin';
+import jsonServerProvider from 'ra-data-json-server';
+import { PartnersList, PartnersEdit, PartnersCreate,PostIcon } from './partners';
+import { RessourcesList, RessourcesEdit, RessourcesCreate } from './ressources';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <Admin dataProvider={jsonServerProvider('http://localhost:5000/api/v1')}>
+        <Resource name="partners" list={PartnersList} edit={PartnersEdit} create={PartnersCreate} icon={PostIcon}/>
+        <Resource name="ressources" list={RessourcesList} edit={RessourcesEdit} create={RessourcesCreate} icon={PostIcon}/>
+    </Admin>
+  </div>
+);
+
 
 export default App;
