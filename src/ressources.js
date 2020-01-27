@@ -1,10 +1,25 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, DateInput } from 'react-admin';
+import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, DateInput,Filter, Pagination } from 'react-admin';
 import BookIcon from '@material-ui/icons/Book';
 export const PostIcon = BookIcon;
 
+const UsersPagination = (props) => (
+    <Pagination
+    rowsPerPageOptions= {
+        [
+            5, 10, 25, 50, 100
+        ]
+    }{...props}
+    />
+)
+
+const RessourcesFilter = (props) => (
+    <Filter {...props}>
+        <TextInput label="Search" source="q" alwaysOn />
+    </Filter>
+);
 export const RessourcesList = (props) => (
-    <List {...props}>
+    <List filters={<RessourcesFilter />} {...props} pagination={<UsersPagination />}>
         <Datagrid>
             <TextField source="id" />
             <TextField source="title" />
@@ -37,7 +52,7 @@ export const RessourcesEdit = (props) => (
 );
 
 export const RessourcesCreate = (props) => (
-    <Create title="Create a Post" {...props}>
+    <Create title="Create a ressource" {...props}>
         <SimpleForm>
             <TextInput source="title" />
             <TextInput source="theme" />
