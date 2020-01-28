@@ -1,7 +1,6 @@
 import React from 'react';
 import { List, Datagrid, Edit, Create, SimpleForm, DateField, TextField, EditButton, TextInput, DateInput,Filter, Pagination } from 'react-admin';
-import BookIcon from '@material-ui/icons/Book';
-export const PostIcon = BookIcon;
+
 
 const UsersPagination = (props) => (
     <Pagination
