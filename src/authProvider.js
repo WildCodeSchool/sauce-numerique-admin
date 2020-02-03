@@ -21,7 +21,7 @@ export default (type, params) => {
     // //   localStorage.removeItem('not_authenticated');
     // //   return Promise.resolve();
     // }
-    if (username === "stan" && password === "stanou") {
+    if (username === "nico" && password === "nicolas") {
       localStorage.setItem('role', 'admin');
       localStorage.removeItem('not_authenticated');
       return Promise.resolve();
