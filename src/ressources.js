@@ -24,6 +24,7 @@ export const RessourcesList = (props) => (
             <TextField source="title" />
             <TextField source="theme" />
             <TextField source="description" />
+            <TextField source="lien" />
             <DateField source="published_at" />
             <TextField source="average_note" />
             <TextField source="views" />
@@ -42,7 +43,8 @@ export const RessourcesEdit = (props) => (
             <TextInput source="id" />
             <TextInput source="title" />
             <TextInput source="theme" />
-            <TextInput source="description" options={{ multiLine: true }}/>
+            <TextInput source="description" />
+            <TextInput source="lien" />
             <DateInput label="Publication date" source="published_at" />
             <TextInput source="average_note" />
             <TextInput disabled label="Nb views" source="views" />
@@ -55,7 +57,8 @@ export const RessourcesCreate = (props) => (
         <SimpleForm>
             <TextInput source="title" />
             <TextInput source="theme" />
-            <TextInput source="description" options={{ multiLine: true }}/>
+            <TextInput source="description" />
+            <TextInput source="lien" />
             <TextInput label="Publication date" source="published_at" />
             <TextInput source="average_note" />
         </SimpleForm>
